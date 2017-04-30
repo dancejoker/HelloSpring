@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       <!--定义设置为自动装配 byType-->
+       <!--如果它的 type 恰好与配置文件中 beans 名称中的一个相匹配，它将尝试匹配和连接它的属性。-->
+       <bean id="textEditor" class="com.Type_Name.TextEditor"
+             autowire="byType">
+              <property name="name" value="Generic Text Editor" />
+       </bean>
+
+       <!--这种模式由属性名称指定自动装配-->
+       <!--配置文件中 beans 的 auto-wire 属性设置为 byName。-->
+       <!--然后，它尝试将它的属性与配置文件中定义为相同名称的 beans 进行匹配和连接-->
+       <bean id="textEditor2" class="com.Type_Name.TextEditor"
+             autowire="byName">
+              <property name="name" value="Generic Text Editor" />
+       </bean>
+
+       <!-- Definition for spellChecker bean -->
+       <bean id="spellChecker" class="com.Type_Name.SpellChecker">
+       </bean>
+
+</beans>
